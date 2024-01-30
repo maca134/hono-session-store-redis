@@ -29,7 +29,7 @@
 	"typesVersions": {
 		"*": {
 			"types": [
-				"./dist/types/types"
+				"./dist/types"
 			]
 		}
 	},
