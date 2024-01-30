@@ -11,8 +11,7 @@
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
 		"types": [
-			"node",
-			"vitest/globals"
+			"node"
 		],
 		"jsx": "react",
 		"jsxFactory": "jsx",

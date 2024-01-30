@@ -10,8 +10,6 @@
 		"dist"
 	],
 	"scripts": {
-		"test": "tsc --noEmit && vitest --run",
-		"clean": "rimraf dist coverage",
 		"build": "rimraf dist && tsx ./build.ts && npm run copy:package.cjs.json",
 		"copy:package.cjs.json": "shx cp ./package.cjs.json ./dist/cjs/package.json && shx cp ./package.cjs.json ./dist/types/package.json",
 		"lint": "eslint --ext js,ts src",
@@ -19,10 +17,7 @@
 		"format": "prettier --check \"src/**/*.{js,ts}\"",
 		"format:fix": "prettier --write \"src/**/*.{js,ts}\"",
 		"postbuild": "publint",
-		"coverage": "vitest --run --coverage",
-		"release": "np",
-		"example": "tsx src/example/index.ts",
-		"prettier": "prettier --write \"**/*.{ts,tsx,md,cjs}\""
+		"release": "np"
 	},
 	"exports": {
 		".": {
@@ -72,7 +67,6 @@
 		"@types/node": "^20.11.10",
 		"@typescript-eslint/eslint-plugin": "^6.20.0",
 		"@typescript-eslint/parser": "^6.20.0",
-		"@vitest/coverage-v8": "^1.2.2",
 		"esbuild": "^0.20.0",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
@@ -87,8 +81,7 @@
 		"rimraf": "^5.0.5",
 		"shx": "^0.3.4",
 		"tsx": "^4.7.0",
-		"typescript": "^5.3.3",
-		"vitest": "^1.2.2"
+		"typescript": "^5.3.3"
 	},
 	"engines": {
 		"node": ">=16.0.0"
