@@ -17,6 +17,7 @@
 		"format": "prettier --check \"src/**/*.{js,ts}\"",
 		"format:fix": "prettier --write \"src/**/*.{js,ts}\"",
 		"postbuild": "publint",
+		"prerelease": "npm run build",
 		"release": "np --no-tests"
 	},
 	"exports": {
