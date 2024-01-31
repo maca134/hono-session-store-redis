@@ -26,9 +26,9 @@ export class RedisStore<T> implements SessionStore<T> {
 			throw new Error('No redis client provided');
 		}
 		this.options = {
-			ttl: 86400,
-			prefix: 'sess:',
-			...options,
+			ttl: options.ttl || 86400,
+			prefix: options.prefix || 'sess:',
+			client: options.client,
 		};
 	}
 
