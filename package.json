@@ -1,6 +1,6 @@
 {
 	"name": "@maca134/hono-session-store-redis",
-	"version": "1.0.1",
+	"version": "1.0.4",
 	"description": "",
 	"main": "dist/cjs/index.js",
 	"type": "module",
@@ -10,6 +10,8 @@
 		"dist"
 	],
 	"scripts": {
+		"update-deps": "npm-check-updates -u && npm i",
+		"release": "np --no-tests",
 		"build": "rimraf dist && tsx ./build.ts && npm run copy:package.cjs.json",
 		"copy:package.cjs.json": "shx cp ./package.cjs.json ./dist/cjs/package.json && shx cp ./package.cjs.json ./dist/types/package.json",
 		"lint": "eslint --ext js,ts src",
@@ -17,8 +19,7 @@
 		"format": "prettier --check \"src/**/*.{js,ts}\"",
 		"format:fix": "prettier --write \"src/**/*.{js,ts}\"",
 		"postbuild": "publint",
-		"prerelease": "npm run build",
-		"release": "np --no-tests"
+		"prerelease": "npm run build"
 	},
 	"exports": {
 		".": {
@@ -76,6 +77,7 @@
 		"eslint-plugin-import": "^2.29.1",
 		"eslint-plugin-node": "^11.1.0",
 		"glob": "^10.3.12",
+		"npm-check-updates": "^16.14.18",
 		"np": "^10.0.2",
 		"prettier": "^3.2.5",
 		"publint": "^0.2.7",
@@ -88,7 +90,7 @@
 		"node": ">=16.0.0"
 	},
 	"dependencies": {
-		"@maca134/hono-session": "^1.0.1",
+		"@maca134/hono-session": "^1.0.5",
 		"redis": "^4.6.13"
 	}
 }

@@ -1,4 +1,4 @@
-# Redis Store
+# Hono Session Redis Store
 
 ...more to come...
 
