@@ -1,11 +1,18 @@
 import type { SessionStore } from '@maca134/hono-session';
-import type { createClient } from 'redis';
+
+type RedisClient = {
+	// The redis client to use
+	get: (key: string) => Promise<string | null>;
+	setEx: (key: string, ttl: number, value: string) => Promise<void>;
+	del: (key: string) => Promise<void>;
+	expire: (key: string, ttl: number) => Promise<void>;
+};
 
 export type RedisStoreOptions = {
 	/**
 	 * The redis client to use
 	 */
-	client: ReturnType<typeof createClient>;
+	client: RedisClient;
 
 	/**
 	 * The prefix for the session keys

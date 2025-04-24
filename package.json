@@ -90,7 +90,6 @@
 		"node": ">=16.0.0"
 	},
 	"peerDependencies": {
-		"@maca134/hono-session": ">=1.*",
-		"redis": ">=4.*"
+		"@maca134/hono-session": ">=1.*"
 	}
 }
