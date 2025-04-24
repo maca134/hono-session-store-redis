@@ -3,7 +3,7 @@ import type { SessionStore } from '@maca134/hono-session';
 type RedisClient = {
 	// The redis client to use
 	get: (key: string) => Promise<string | null>;
-	setEx: (key: string, ttl: number, value: string) => Promise<void>;
+	setEx: (key: string, ttl: number, value: string) => Promise<string>;
 	del: (key: string) => Promise<void>;
 	expire: (key: string, ttl: number) => Promise<void>;
 };
